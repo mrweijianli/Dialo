@@ -34,6 +34,7 @@ This robot is built around the model, [DialoGPT](https://github.com/microsoft/Di
 * Docker image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
 * AWS EC2 / ECS Instance containing deployed chatbot 
 
+<img src="figure/chatbot_ecs.jpeg" width="800" height="200">
 
 
 ## How to run the final deliverable (2 options)
