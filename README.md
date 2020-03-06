@@ -30,14 +30,13 @@ This robot is built around the model, [DialoGPT](https://github.com/microsoft/Di
 
 ## Deliverables
 * Preprocessed Reddit Forum Data (27 GB) [Download](https://drive.google.com/open?id=1FiZh_NqaldbkA9aH1CoA0jIo84fgAGN5)
-* Dockerfile for chatbot deployment [View](https://github.com/Leevisir/Dialo/blob/master/Dockerfile)
-* Docker image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
-* AWS EC2 / ECS Instance containing deployed chatbot 
+* GPT2 Model Decoder [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/decoder.py)
+* Code on running dialo bot locally via terminal [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/interactive_bot.py)
+* Code on setting up Telegram bot via Telegram API [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/telegram_bot.py)
+* Dockerfile for Chatbot Deployment [View](https://github.com/Leevisir/Dialo/blob/master/Dockerfile)
+* Docker Image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
 
-<img src="./figures/chatbot_ecs.png" width="800" height="200">
-
-
-## Reproduce deliverables (2 options)
+## Run Chatbot (2 options)
 ### Option 1 - reproduce with Docker:
 ### 1. Create a Telegram bot
 Please follow this [link](https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d) to create a Telegram bot. Please write down the token from the response of Telegram for later use.
