@@ -100,6 +100,7 @@ Each step is separated with well written comments. Please feel free to look into
 
 ### Arguments for the training script
 In the last step, the training script accept several arguments to tweak the training:
+
 Argument | Type | Default value | Description
 ---------|------|---------------|------------
 max\_seq\_length | `int` | `128` | Maximum number of tokens for each training instance. 
