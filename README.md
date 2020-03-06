@@ -34,11 +34,11 @@ This robot is built around the model, [DialoGPT](https://github.com/microsoft/Di
 * Docker image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
 * AWS EC2 / ECS Instance containing deployed chatbot 
 
-<img src="figures/chatbot_ecs.jpeg" width="800" height="200">
+<img src="./figures/chatbot_ecs.jpeg" width="800" height="200">
 
 
 ## Reproduce deliverables (2 options)
-### Option 1 (using Docker):
+### Option 1 - reproduce with Docker:
 ### 1. Create a Telegram bot
 Please follow this [link](https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d) to create a Telegram bot. Please write down the token from the response of Telegram for later use.
 ```
@@ -62,8 +62,8 @@ docker run dialo
 ```
 Now the chatbot is running and you can use Telegram to chat with it.
 
-### Option 2:
-### 1. Do step 1 - 3 in option 1
+### Option 2 - reproduce from code:
+### 1. Follow step 1 - 3 in option 1
 ### 2. Create a virtual environment and activate it (if anaconda is not installed, please install it first following this [link](https://docs.anaconda.com/anaconda/install/))
 ```
 conda create -n dialo python=3.7
