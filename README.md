@@ -29,11 +29,11 @@ In this project, we intended to develop a contextual chit-chat chatbot that has 
 This robot is built around the model, [DialoGPT](https://github.com/microsoft/DialoGPT), which is based on the language model, [GPT2](https://openai.com/blog/better-language-models/). DialoGPT is a large-scale pretrained dialogue response generation model trained by Microsoft. Their [human evaluation results](https://github.com/microsoft/DialoGPT#human_eval) indicate that the response generated from DialoGPT is comparable to human response quality under a single-turn conversation Turing test.
 
 ## Deliverables
-* Preprocessed Reddit Forum Data (27 GB) [Download](https://drive.google.com/open?id=1FiZh_NqaldbkA9aH1CoA0jIo84fgAGN5)
-* GPT2 Model Decoder [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/decoder.py)
-* Code on running dialo bot locally via terminal [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/interactive_bot.py)
-* Code on setting up Telegram bot via Telegram API [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/telegram_bot.py)
-* Dockerfile for Chatbot Deployment [View](https://github.com/Leevisir/Dialo/blob/master/Dockerfile)
+* Preprocessed Reddit forum data (27 GB) [Download](https://drive.google.com/open?id=1FiZh_NqaldbkA9aH1CoA0jIo84fgAGN5)
+* GPT2 model decoder [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/decoder.py)
+* Code on running Dialo bot locally via terminal [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/interactive_bot.py)
+* Code on running Dialo bot on Telegram via Telegram API [View](https://github.com/Leevisir/Dialo/blob/master/gpt2bot/telegram_bot.py)
+* Dockerfile for chatbot deployment [View](https://github.com/Leevisir/Dialo/blob/master/Dockerfile)
 * Docker Image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
 
 ## Run Chatbot (2 options)
