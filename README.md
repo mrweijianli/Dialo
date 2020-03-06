@@ -28,9 +28,8 @@ In this project, we intended to develop a contextual chit-chat chatbot that has 
 ## Core Model
 This robot is built around the model, [DialoGPT](https://github.com/microsoft/DialoGPT), which is based on the language model, [GPT2](https://openai.com/blog/better-language-models/). DialoGPT is a large-scale pretrained dialogue response generation model trained by Microsoft. Their [human evaluation results](https://github.com/microsoft/DialoGPT#human_eval) indicate that the response generated from DialoGPT is comparable to human response quality under a single-turn conversation Turing test.
 
-
 ## How to run the final deliverable (2 options)
-## Containerized way:
+### Option 1 (using Docker):
 ### 1. Create a Telegram bot
 Please follow this [link](https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d) to create a Telegram bot. Please write down the token from the response of Telegram for later use.
 ```
@@ -52,9 +51,11 @@ telegram_token = <YOUR_TOKEN_HERE>
 docker build -t dialo .
 docker run dialo
 ```
-Now the chatbot is running and you can use Telegram 
+Now the chatbot is running and you can use Telegram to chat with it.
 
-### 3. Create a virtual environment and activate it (if anaconda is not installed, please install it first following this [link](https://docs.anaconda.com/anaconda/install/))
+### Option 2:
+### 1. Do step 1 - 3 in option 1
+### 2. Create a virtual environment and activate it (if anaconda is not installed, please install it first following this [link](https://docs.anaconda.com/anaconda/install/))
 ```
 conda create -n dialo python=3.7
 conda activate dialo
@@ -63,7 +64,64 @@ conda activate dialo
 ```
 pip install -r requirements.txt
 ```
-### 5. 
+### 5. Run the chatbot
+```
+cd gpt2bot
+python telegram_bot.py
+```
+
+## How to train the model
+To retrain the DialoGPT model, please follow the following steps.
+### 1. Installation
+```
+sudo apt-get install -y make wget gzip bzip2 xz-utils zstd
+git clone https://github.com/microsoft/DialoGPT.git
+cd DialoGPT
+conda env create -f LSP-linux.yml -n LSP
+conda activate LSP
+```
+To use fp16 training, please install apex by using commands below
+```
+conda activate LSP
+git clone https://github.com/NVIDIA/apex
+cd apex
+git reset --hard 3d01e4a0a188cc8df54bc6e44cf5eb40ff6b4cc5
+pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" .
+```
+### 2. Run the training
+Note that by default the demo.py will use a dummy data, please specify the Reddit training data by using option --data. Three options are available:dummy,small and full. The small Reddit data is around 140MB and the full Reddit data is more than 27GB. 
+```
+python demo.py --data small
+python demo.py --data full
+```
+Note that the demo.py already includes the entire training pipeline:  
+Download model -> Download data -> Preprocess data -> Run the training script  
+Each step is separated with well written comments. Please feel free to look into demo.py to have full control on each configurable steps.  
+
+### Arguments for the training script
+In the last step, the training script accept several arguments to tweak the training:
+Argument | Type | Default value | Description
+---------|------|---------------|------------
+max\_seq\_length | `int` | `128` | Maximum number of tokens for each training instance. 
+train\_input\_file | `str` | `""` | Path of the training dataset in a .db format
+eval\_input\_file | `str` | `""` | Path of the validation set in a tsv format
+continue_from | `int` | `0` | Resuming the training after a specified number of steps
+fp16 | `boolean` | `True` | Whether to use 16-bits floating point for model training.
+train\_batch\_size | `int` | `4` | Batch size for training
+valid\_batch\_size | `int` | `4` | Batch size for validation
+gradient\_accumulation\_steps | `int` | `2` | Accumulate gradients on several steps
+learning\_rate | `float` | `1e-5` | Learning rate
+lr\_schedule | `str` | `noam` | Learning rate schedule can be chosen from [`noam`, `noamwd`, `BERT`, `None`]
+num\_optim\_steps | `int` | `1000000` | Number of training optimization steps
+no_token_id | `boolean` | `True` | If set True, using all-zeros token-type embedding.
+
+
+
+## How to use the trained model
+
+
+
+
   
 ## What we did?
 
