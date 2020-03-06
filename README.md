@@ -28,6 +28,14 @@ In this project, we intended to develop a contextual chit-chat chatbot that has 
 ## Core Model
 This robot is built around the model, [DialoGPT](https://github.com/microsoft/DialoGPT), which is based on the language model, [GPT2](https://openai.com/blog/better-language-models/). DialoGPT is a large-scale pretrained dialogue response generation model trained by Microsoft. Their [human evaluation results](https://github.com/microsoft/DialoGPT#human_eval) indicate that the response generated from DialoGPT is comparable to human response quality under a single-turn conversation Turing test.
 
+## Deliverables
+* Preprocessed Reddit Forum Data (27 GB) [Download](https://drive.google.com/open?id=1FiZh_NqaldbkA9aH1CoA0jIo84fgAGN5)
+* Dockerfile for chatbot deployment [View](https://github.com/Leevisir/Dialo/blob/master/Dockerfile)
+* Docker image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
+* AWS EC2 / ECS Instance containing deployed chatbot 
+
+
+
 ## How to run the final deliverable (2 options)
 ### Option 1 (using Docker):
 ### 1. Create a Telegram bot
