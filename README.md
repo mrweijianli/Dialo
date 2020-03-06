@@ -72,13 +72,13 @@ conda activate dialo
 ```
 pip install -r requirements.txt
 ```
-### 5. Run the chatbot
+### 5. Run chatbot
 ```
 cd gpt2bot
 python telegram_bot.py
 ```
 
-## How to train the model
+## Model Training
 To retrain the DialoGPT model, please follow the following steps.
 ### 1. Installation
 ```
@@ -130,23 +130,16 @@ no_token_id | `boolean` | `True` | If set True, using all-zeros token-type embed
 
 
 
-
   
 ## What we did?
 
 ### 1. Create a Telegram bot
 
-- Register a new Telegram bot via BotFather (see https://core.telegram.org/bots)
+- Register a new Telegram bot from BotFather (see https://core.telegram.org/bots)
 
 ### 2. Deploy the bot (4 options)
 
-#### a. Google Colab
-
-[A Colab interactive notebook](https://colab.research.google.com/drive/1QH9Vq6EEl7lU6Nz7uFHFN5i6rogLaAE2)
-
-A good thing about Google Colab is free GPU. So why not running the Telegram bot there, for blazingly fast chat? Run the notebook at daytime and do not forget to stop it at night.
-
-#### b. Amazon EC2
+#### a. Amazon EC2
 <!-- First, search for EC2 in the AWS console search bar:
 ![image info](./figures/EC2_search.png)
 On the EC2 Dashboard, launch a new EC2 instance:
@@ -160,12 +153,13 @@ After launching the EC2 instance, on the sidebar of the EC2 Dashboard, click **i
 
 
 
-#### c. Amazon ECS
+#### b. Amazon ECS
 
-#### d. Local laptop
+#### c. Local Machine 
 
 - Clone the repository
 - Set your parameters such as API token in dialog.cfg
+- Install packages listed in requirements.txt
 - To avoid re-downloading model files at each re-deployment, download the model files beforehand with
 ```
 # cd gpt2bot/gpt2bot
