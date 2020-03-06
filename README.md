@@ -20,11 +20,14 @@ The bot is built around [DialoGPT](https://github.com/microsoft/DialoGPT) - a la
 
 Since even with properly filtered Reddit dataset the model can generate toxic/inappropriate responses, the Microsoft team was unable to provide the decoding script. This repository implements the decoding script inspired by `run_generation.py` released earlier by Hugging Face. Moreover, it implements a Telegram bot that can be deployed locally, remotely, and even on Colab, and just makes testing fun. -->
 
-## Problem we tried to solve
-In this project, we intended to develop a contextual chit-chat chatbot that has a user-friendly user interface and is easy to be deployed on any cloud platform.
+## Problem Statement
+In recent years, many chatbots have been deployed on the web and mobile platforms for the purpose of seeking information, site guidance, FAQ answering, etc. These chatbot are able to bring human-level performances within their task domain. However, when it comes to designing a chi-chat chatbot for the intention of making small-talks, it is challenging to build a chatbot that is flexible and intelligent enough to converse with users across all topics. 
+
+In this project, we intended to develop a contextual chit-chat chatbot that has a user-friendly user interface and can easily be deployed on any cloud platform. 
 
 ## Core Model
-This robot is developed based on the model, [DialoGPT](https://github.com/microsoft/DialoGPT), which is based on the language model, [GPT2](https://openai.com/blog/better-language-models/).
+This robot is built around the model, [DialoGPT](https://github.com/microsoft/DialoGPT), which is based on the language model, [GPT2](https://openai.com/blog/better-language-models/). DialoGPT is a large-scale pretrained dialogue response generation model trained by Microsoft. Their [human evaluation results](https://github.com/microsoft/DialoGPT#human_eval) indicate that the response generated from DialoGPT is comparable to human response quality under a single-turn conversation Turing test.
+
 
 ## How to run the final deliverable (2 options)
 ## Containerized way:
