@@ -34,10 +34,10 @@ This robot is built around the model, [DialoGPT](https://github.com/microsoft/Di
 * Docker image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
 * AWS EC2 / ECS Instance containing deployed chatbot 
 
-<img src="figure/chatbot_ecs.jpeg" width="800" height="200">
+<img src="figures/chatbot_ecs.jpeg" width="800" height="200">
 
 
-## How to run the final deliverable (2 options)
+## Reproduce deliverables (2 options)
 ### Option 1 (using Docker):
 ### 1. Create a Telegram bot
 Please follow this [link](https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d) to create a Telegram bot. Please write down the token from the response of Telegram for later use.
