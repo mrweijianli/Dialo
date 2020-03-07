@@ -148,7 +148,9 @@ On the EC2 Dashboard, launch a new EC2 instance:
 - Then, select the correct Instance Type with GPU supports. Then one we chose was **p3.2xlarge**  
 - After launching the EC2 instance, on the sidebar of the EC2 Dashboard, click **instance**:
 ![image info](./figures/ec2_sidebar.png)
-
+- Select the instance just launched, click **connect** and you will seed the instructions on how to connect to the running instance using SSH. Open a terminal in your local machine and use SSH to connect to the instance.
+![image info](./figures/click_connect.png)
+- Do the steps of option 2 listed above
 #### b. Amazon ECS
 
 <!--
