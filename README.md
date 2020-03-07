@@ -108,7 +108,7 @@ Note that the demo.py already includes the entire training pipeline:
 Download model -> Download data -> Preprocess data -> Run the training script  
 Each step is separated with well written comments. Please feel free to look into demo.py to have full control on each configurable steps.  
 
-### Arguments for the training script
+### 3. Arguments for the training script
 In the last step, the training script accept several arguments to tweak the training:
 
 Argument | Type | Default value | Description
