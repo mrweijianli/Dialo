@@ -98,6 +98,7 @@ git reset --hard 3d01e4a0a188cc8df54bc6e44cf5eb40ff6b4cc5
 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" .
 ```
 ### 2. Training Script
+We used [demo.py](https://github.com/Leevisir/Dialo/blob/master/demo.py) for data preprocessing and model training.
 Note that by default the demo.py will use a dummy data, please specify the Reddit training data by using option --data. Three options are available:dummy,small and full. The small Reddit data is around 140MB and the full Reddit data is more than 27GB. 
 ```
 python demo.py --data small
