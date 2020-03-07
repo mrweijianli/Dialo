@@ -25,6 +25,10 @@ In recent years, many chatbots have been deployed on the web and mobile platform
 
 In this project, we intended to develop a contextual chit-chat chatbot that has a user-friendly user interface and can easily be deployed on any cloud platform. 
 
+### Input & Output
+Input: a natural language sentence in English. (eg: Where are you from?)
+Output: a natural language sentence in English. (eg: I'm from England, but I live in the US, USA)
+
 ## Core Model
 This robot is built around the model, [DialoGPT](https://github.com/microsoft/DialoGPT), which is based on the language model, [GPT2](https://openai.com/blog/better-language-models/). DialoGPT is a large-scale pretrained dialogue response generation model trained by Microsoft. Their [human evaluation results](https://github.com/microsoft/DialoGPT#human_eval) indicate that the response generated from DialoGPT is comparable to human response quality under a single-turn conversation Turing test.
 
