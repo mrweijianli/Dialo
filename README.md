@@ -37,7 +37,8 @@ This robot is built around the model, [DialoGPT](https://github.com/microsoft/Di
 * Docker Image [View](https://hub.docker.com/repository/docker/leevisir/weijianbot)
 
 ## Run Chatbot (2 options)
-### Option 1 - reproduce with Docker:
+Note: Both options 1 and 2 can be executed from a cloud service provider or from your local machine.
+### Option 1 - Run with Docker:
 ### 1. Create a Telegram bot
 Please follow this [link](https://tutorials.botsfloor.com/creating-a-bot-using-the-telegram-bot-api-5d3caed3266d) to create a Telegram bot. Please write down the token from the response of Telegram for later use.
 ```
@@ -49,19 +50,19 @@ Use this token to access the HTTP API:
 git clone https://github.com/Leevisir/Dialo.git
 cd Dialo
 ```
-### 3. Put the API token into the configuration file
+### 3. Add the API token into the configuration file
 ```
 # change this line in the file gpt2bot/chatbot.cfg
 telegram_token = <YOUR_TOKEN_HERE>
 ```
-### 4. Build the Docker imgae and run it
+### 4. Build the Docker image and run it
 ```
 docker build -t dialo .
 docker run dialo
 ```
 Now the chatbot is running and you can use Telegram to chat with it.
 
-### Option 2 - reproduce from code:
+### Option 2 - Run from code:
 ### 1. Follow step 1 - 3 in option 1
 ### 2. Create a virtual environment and activate it (if anaconda is not installed, please install it first following this [link](https://docs.anaconda.com/anaconda/install/))
 ```
@@ -96,7 +97,7 @@ cd apex
 git reset --hard 3d01e4a0a188cc8df54bc6e44cf5eb40ff6b4cc5
 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" .
 ```
-### 2. Run the training
+### 2. Training Script
 Note that by default the demo.py will use a dummy data, please specify the Reddit training data by using option --data. Three options are available:dummy,small and full. The small Reddit data is around 140MB and the full Reddit data is more than 27GB. 
 ```
 python demo.py --data small
@@ -125,13 +126,9 @@ num\_optim\_steps | `int` | `1000000` | Number of training optimization steps
 no_token_id | `boolean` | `True` | If set True, using all-zeros token-type embedding.
 
 
-
-## How to use the trained model
-
-
-
+<!--## How to use the trained model-->
   
-## What we did?
+## Deploy Dialo Bot Via AWS
 
 ### 1. Create a Telegram bot
 
@@ -144,22 +141,19 @@ no_token_id | `boolean` | `True` | If set True, using all-zeros token-type embed
 ![image info](./figures/EC2_search.png)
 On the EC2 Dashboard, launch a new EC2 instance:
 ![image info](./figures/launch_instance.png) -->
-First, launch a new EC2 instance
-Select the correct AMI:
+- First, launch a new EC2 instance
+- Select the correct AMI:
 ![iamge info](./figures/ubuntu_instance.png)
-Then, select the correct Instance Type with GPU supports. Then one we chose was **p3.2xlarge**  
-After launching the EC2 instance, on the sidebar of the EC2 Dashboard, click **instance**:
+- Then, select the correct Instance Type with GPU supports. Then one we chose was **p3.2xlarge**  
+- After launching the EC2 instance, on the sidebar of the EC2 Dashboard, click **instance**:
 ![image info](./figures/ec2_sidebar.png)
-
-
 
 #### b. Amazon ECS
 
-#### c. Local Machine 
-
+<!--
+#### c. Local Machine (via docker)
 - Clone the repository
 - Set your parameters such as API token in dialog.cfg
-- Install packages listed in requirements.txt
 - To avoid re-downloading model files at each re-deployment, download the model files beforehand with
 ```
 # cd gpt2bot/gpt2bot
@@ -169,9 +163,10 @@ python model.py
 ```
 docker build -t gpt2bot . && docker run gpt2bot
 ```
+-->
 
-#### Manually
-
+<!--
+#### d. Local Machine (via code)
 - Clone the repository
 - Set your parameters such as API token in dialog.cfg
 - Install packages listed in requirements.txt
@@ -183,7 +178,8 @@ python telegram_bot.py
 - To test the things out in the console, run
 ```
 python interactive_bot.py
-```
+``
+-->
 
 ### 3. Start chatting!
 
