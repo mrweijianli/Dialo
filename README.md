@@ -137,7 +137,7 @@ no_token_id | `boolean` | `True` | If set True, using all-zeros token-type embed
 
 ### 2. Deploy the bot (2 options)
 
-#### a. Deployment via Amazon EC2
+#### a. Deployment via Amazon Elastic Compute Cloud (EC2)
 <!-- First, search for EC2 in the AWS console search bar:
 ![image info](./figures/EC2_search.png)
 On the EC2 Dashboard, launch a new EC2 instance:
