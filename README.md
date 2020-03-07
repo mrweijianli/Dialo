@@ -135,9 +135,9 @@ no_token_id | `boolean` | `True` | If set True, using all-zeros token-type embed
 
 - Register a new Telegram bot from BotFather (see https://core.telegram.org/bots)
 
-### 2. Deploy the bot (4 options)
+### 2. Deploy the bot (2 options)
 
-#### a. Amazon EC2
+#### a. Deployment via Amazon EC2
 <!-- First, search for EC2 in the AWS console search bar:
 ![image info](./figures/EC2_search.png)
 On the EC2 Dashboard, launch a new EC2 instance:
@@ -151,8 +151,17 @@ On the EC2 Dashboard, launch a new EC2 instance:
 - Select the instance just launched, click **connect** and you will seed the instructions on how to connect to the running instance using SSH. Open a terminal in your local machine and use SSH to connect to the instance.
 ![image info](./figures/click_connect.png)
 - Do the steps of option 2 listed above on the instance.
-#### b. Amazon ECS
 
+#### b. Deployment via Amazon Elastic Container Service (ECS)
+We primarily followed [this guide](https://towardsdatascience.com/how-to-deploy-a-docker-container-python-on-amazon-ecs-using-amazon-ecr-9c52922b738f) for deploying our docker image to AWS ECS. 
+
+- First, we created a repository for this project on Amazon Elastic Cloud Registry (ECR) and pushed our docker image to the repository created.
+
+![image info](./figures/aws_ecr.png)
+
+- Then, we deployed the docker container on an ECS node.
+
+![image info](./figures/chatbot_ecs.png)
 <!--
 #### c. Local Machine (via docker)
 - Clone the repository
